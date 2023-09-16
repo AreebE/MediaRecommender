@@ -1,94 +1,109 @@
 <html>
+
 <head>
-<script>
-function display()
-{
-//document.getElementById("displayarea").innerHTML = document.getElementById("genres").value;
-var genre = document.getElementById("genres").value;
-//console.log(genre);
-const genreslist = genre.split(",");
-console.log(genreslist);
-//document.getElementById("displayarea1").innerHTML = document.getElementById("actors").value; 
-var actor = document.getElementById("actors").value;
-//console.log(actor);
-const actorslist = actor.split(",");
-console.log(actorslist);
-}
+  <script>
+    function display() {
+      //document.getElementById("displayarea").innerHTML = document.getElementById("genres").value;
+      var genre = document.getElementById("genres").value;
+      //console.log(genre);
+      const genreslist = genre.split(",");
+      console.log(genreslist);
+      //document.getElementById("displayarea1").innerHTML = document.getElementById("actors").value; 
+      var actor = document.getElementById("actors").value;
+      //console.log(actor);
+      const actorslist = actor.split(",");
+      console.log(actorslist);
+
+      var director = document.getElementById("directors").value;
+      const directorslist = director.split(",");
+      console.log(directorslist);
+
+      var showlengthoption = document.getElementsByName("showlength");
+      for (i = 0; i < showlengthoption.length; i++) {
+        if (showlengthoption[i].checked)
+          console.log(showlengthoption[i].value)
+      }
+    }
 /*<tr style="background-color:#8FBC8F;">
-<td align="center"><b>Genres You Listed</b></td>
-<td align="center"><b>Actors You Listed</b></td>
-</tr> 
-<tr>
-<td align="center"><div id="displayarea"></div></td>
-<td align="center"><div id="displayarea1"></div></td>
-</tr>*/
-</script>
+                <td align="center"><b>Genres You Listed</b></td>
+                <td align="center"><b>Actors You Listed</b></td>
+                </tr> 
+                <tr>
+                <td align="center"><div id="displayarea"></div></td>
+                <td align="center"><div id="displayarea1"></div></td>
+                </tr>*/
+  </script>
 </head>
 
 <body>
-<table  border="1" align="center">
-<tr>
-<td>Genres (Separated By A Comma)</td>
-<td><input type="text" name="genres" id="genres"></td>
-</tr>
-<tr>
-<td>Actors (Separated By A Comma)</td>
-<td><input type="text" name="actors" id="actors"></td>
-</tr>
-<td> Show Length</td>
-<td> <input type="radio" name="showlength" id="shortshow"> Short (<5 episodes) <br>
-<input type="radio" name="showlength" id="moderateshow"> Moderate (~10 episodes) <br><input type="radio" name="showlength" id="longshow"> Long (10+ episodes) </td>
-</tr>
+  <table border="1" align="center">
+    <tr>
+      <td>Genres (Separated By A Comma)</td>
+      <td><input type="text" name="genres" id="genres"></td>
+    </tr>
+    <tr>
+      <td>Actors (Separated By A Comma)</td>
+      <td><input type="text" name="actors" id="actors"></td>
+    </tr>
+    <tr>
+      <td>Directors (Separated By A Comma)</td>
+      <td><input type="text" name="directors" id="directors"></td>
+    </tr>
+    <td> Show Length</td>
+    <td> <input type="radio" name="showlength" id="shortshow"> Short (<5 episodes) <br>
+        <input type="radio" name="showlength" id="moderateshow"> Moderate (~10 episodes) <br><input type="radio"
+          name="showlength" id="longshow"> Long (10+ episodes) </td>
+    </tr>
 
-<tr>
-<td>&nbsp</td>
-<td align="center"><input type="button" value="Submit" name="submit" id="submit" onClick="display()"/></td>
-</tr>
-</table>
-<table width="400px" align="center" border=0> 
+    <tr>
+      <td>&nbsp</td>
+      <td align="center"><input type="button" value="Submit" name="submit" id="submit" onClick="display()" /></td>
+    </tr>
+  </table>
+  <table width="400px" align="center" border=0>
 
-</table>
-<p>Rate the importance of the following options to you (out of 10):</p>
-    <form id="ratingForm">
-        <ul>
-            <li>
-                Characters: <input type="number" name="rating1" min="1" max="10">
-            </li>
-            <li>
-                Plot: <input type="number" name="rating2" min="1" max="10">
-            </li>
-            <!-- Add more options as needed -->
-        </ul>
-        <input type="submit" value="Submit Ratings">
-    </form>
-<script>    document.getElementById("ratingForm").addEventListener("submit", function(event) {
-            event.preventDefault(); // Prevent the form from submitting
+  </table>
+  <p>Rate the importance of the following options to you (out of 10):</p>
+  <form id="ratingForm">
+    <ul>
+      <li>
+        Characters: <input type="number" name="rating1" min="1" max="10">
+      </li>
+      <li>
+        Plot: <input type="number" name="rating2" min="1" max="10">
+      </li>
+      <!-- Add more options as needed -->
+    </ul>
+    <input type="submit" value="Submit Ratings">
+  </form>
+  <script>    document.getElementById("ratingForm").addEventListener("submit", function (event) {
+      event.preventDefault(); // Prevent the form from submitting
 
-            // Collect and process the ratings
-            var ratings = [];
+      // Collect and process the ratings
+      var ratings = [];
 
-            // Loop through the form elements
-            var elements = this.elements;
-            for (var i = 0; i < elements.length; i++) {
-                var element = elements[i];
-                if (element.type === "number") {
-                    var rating = parseInt(element.value, 10);
+      // Loop through the form elements
+      var elements = this.elements;
+      for (var i = 0; i < elements.length; i++) {
+        var element = elements[i];
+        if (element.type === "number") {
+          var rating = parseInt(element.value, 10);
 
-                    // Check if the rating is within the valid range (1 to 10)
-                    /*if (rating >= 1 && rating <= 10) {
-                        ratings.push(rating);
-                    } else {
-                        alert("Please enter a rating between 1 and 10.");
-                        return; // Exit the function if an invalid rating is found
-                    }*/
-                }
-            }
+          // Check if the rating is within the valid range (1 to 10)
+          if (rating >= 1 && rating <= 10) {
+            ratings.push(rating);
+          } else {
+            alert("Please enter a rating between 1 and 10.");
+            return; // Exit the function if an invalid rating is found
+          }
+        }
+      }
 
-            // Display or further process the collected ratings here
-            console.log("User Ratings:", ratings);
-          console.log(ratings[1]);
-        });
-    </script>
+      // Display or further process the collected ratings here
+      console.log("User Ratings:", ratings);
+      console.log(ratings[1]);
+    });
+  </script>
 </body>
-  
+
 </html>

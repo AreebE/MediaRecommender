@@ -13,6 +13,14 @@ var author = document.getElementById("authors").value;
 //console.log(author);
 const authorslist = author.split(",");
 console.log(authorslist);
+var booklengthoption = document.getElementsByName("booklength");
+      for (i = 0; i < booklengthoption.length; i++) {
+        if (booklengthoption[i].checked)
+          console.log(booklengthoption[i].value)
+      }
+//const tableuserinput = genre.split(",") + ". " + author.split(",");
+//console.log(tableuserinput);
+  
 }
 /*<tr style="background-color:#8FBC8F;">
 <td align="center"><b>Genres You Listed</b></td>
@@ -37,8 +45,9 @@ console.log(authorslist);
 </tr>
 <tr>
 <td> Book Length</td>
-<td> <input type="radio" name="booklength" id="shortbook"> Short <br>
-<input type="radio" name="booklength" id="moderatebook"> Moderate <br><input type="radio" name="booklength" id="longbook"> Long </td>
+<td> <input type="radio" name="booklength" id="shortbook"> Short (<200 pages)<br>
+<input type="radio" name="booklength" id="moderatebook"> Moderate (200-500 pages)<br>
+<input type="radio" name="booklength" id="longbook"> Long (500+ pages)</td>
 </tr>
 
 <tr>
@@ -53,7 +62,7 @@ console.log(authorslist);
     <form id="ratingForm">
         <ul>
             <li>
-                Characters: <input type="number" name="rating1" min="1" max="10">
+                Difficulty: <input type="number" name="rating1" min="1" max="10">
             </li>
             <li>
                 Plot: <input type="number" name="rating2" min="1" max="10">
@@ -62,7 +71,8 @@ console.log(authorslist);
         </ul>
         <input type="submit" value="Submit Ratings">
     </form>
-<script>    document.getElementById("ratingForm").addEventListener("submit", function(event) {
+</body>
+  <script>    document.getElementById("ratingForm").addEventListener("submit", function(event) {
             event.preventDefault(); // Prevent the form from submitting
 
             // Collect and process the ratings
@@ -76,12 +86,12 @@ console.log(authorslist);
                     var rating = parseInt(element.value, 10);
 
                     // Check if the rating is within the valid range (1 to 10)
-                   /* if (rating >= 1 && rating <= 10) {
+                    if (rating >= 1 && rating <= 10) {
                         ratings.push(rating);
                     } else {
                         alert("Please enter a rating between 1 and 10.");
                         return; // Exit the function if an invalid rating is found
-                    }*/
+                    }
                 }
             }
 
@@ -89,6 +99,7 @@ console.log(authorslist);
             console.log("User Ratings:", ratings);
           console.log(ratings[1]);
         });
+    
     </script>
 </body>
 </html>

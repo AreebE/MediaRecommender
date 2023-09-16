@@ -13,6 +13,13 @@ var developer = document.getElementById("developers").value;
 //console.log(developer);
 const developerslist = developer.split(",");
 console.log(developerslist);
+//const tableuserinput = genre.split(",") + ". " + developer.split(",");
+//console.log(tableuserinput);
+var gamelengthoption = document.getElementsByName("gamelength");
+      for (i = 0; i < gamelengthoption.length; i++) {
+        if (gamelengthoption[i].checked)
+          console.log(gamelengthoption[i].value)
+      }
 }
 /*<tr style="background-color:#8FBC8F;">
 <td align="center"><b>Genres You Listed</b></td>
@@ -34,7 +41,12 @@ console.log(developerslist);
 <tr>
 <td>Developers (Separated By A Comma)</td>
 <td><input type="text" name="developers" id="developers"></td>
-Rate the importance of the following options to you (out of 10):
+<tr>
+<td> Game Length</td>
+<td> <input type="radio" name="gamelength" id="shortgame"> Short (<20 hours)<br>
+<input type="radio" name="gamelength" id="moderategame"> Moderate (20-100 hours)<br><input type="radio" name="gamelength" id="longgame"> Long (100+ hours)</td>
+</tr>
+
 </tr>
 
 <tr>
@@ -46,7 +58,7 @@ Rate the importance of the following options to you (out of 10):
 
 
 </table>
-  <p>Rate the Options</p>
+  <p>Rate the importance of the following options to you (out of 10):</p>
     <form id="ratingForm">
         <ul>
             <li>
@@ -74,12 +86,12 @@ Rate the importance of the following options to you (out of 10):
                     var rating = parseInt(element.value, 10);
 
                     // Check if the rating is within the valid range (1 to 10)
-                    /*if (rating >= 1 && rating <= 10) {
+                    if (rating >= 1 && rating <= 10) {
                         ratings.push(rating);
                     } else {
                         alert("Please enter a rating between 1 and 10.");
                         return; // Exit the function if an invalid rating is found
-                    }*/
+                    }
                 }
             }
 
