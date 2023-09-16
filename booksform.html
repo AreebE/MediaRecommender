@@ -35,6 +35,11 @@ console.log(authorslist);
 <td>Authors (Separated By A Comma)</td>
 <td><input type="text" name="authors" id="authors"></td>
 </tr>
+<tr>
+<td> Book Length</td>
+<td> <input type="radio" name="booklength" id="shortbook"> Short <br>
+<input type="radio" name="booklength" id="moderatebook"> Moderate <br><input type="radio" name="booklength" id="longbook"> Long </td>
+</tr>
 
 <tr>
 <td>&nbsp</td>
@@ -44,7 +49,7 @@ console.log(authorslist);
 <table width="400px" align="center" border=0> 
 
 </table>
-<p>Rate the importance of the following options to you:</p>
+<p>Rate the importance of the following options to you (out of 10):</p>
     <form id="ratingForm">
         <ul>
             <li>
@@ -52,9 +57,6 @@ console.log(authorslist);
             </li>
             <li>
                 Plot: <input type="number" name="rating2" min="1" max="10">
-            </li>
-            <li>
-                Length: <input type="number" name="rating3" min="1" max="10">
             </li>
             <!-- Add more options as needed -->
         </ul>
