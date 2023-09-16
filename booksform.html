@@ -5,53 +5,72 @@
   </script>
 </head>
 
-<body>
-  <table border="1" align="center">
-    <tr>
-      <td>Genres (Separated By A Comma)</td>
-      <td><input type="text" name="genres" id="genres"></td>
-    </tr>
-    <tr>
-      <td>Themes (Separated By A Comma): </td>
-      <td><input type="text" name="themes" id="themes"></td>
-    </tr>
-    <tr>
-      <td>Similar to These Authors (Separated By A Comma): </td>
-      <td><input type="text" name="authors" id="authors"></td>
-    </tr>
-    <tr>
-      <td> Book Length</td>
-      <td> <input type="radio" name="booklength" id="shortbook"> Short (<200 pages)<br>
-          <input type="radio" name="booklength" id="moderatebook"> Moderate (200-500 pages)<br>
-          <input type="radio" name="booklength" id="longbook"> Long (500+ pages)</td>
-    </tr>
+<body style="background-color:#E5E7CF;">
 
-    <tr>
-      <td>&nbsp</td>
-      <td align="center"><input type="button" value="Submit" name="submit" id="submit" onClick="display()" /></td>
-    </tr>
-  </table>
-  <table width="400px" align="center" border=0>
+  <body>
+    <h1 style="text-align : center"> BOOKS</h1>
+    <table border="1" align="center">
+      <tr>
+        <td>
+          <font color="#92ACC2"> Genres (Separated By A Comma) </font>
+        </td>
+        <td><input type="text" name="genres" id="genres"></td>
+      </tr>
+      <tr>
+        <td><font color="#C297BA"> Themes (Separated By A Comma) </font> </td>
+        <td><input type="text" name="themes" id="themes"></td>
+      </tr>
+      <tr>
+        <td>Similar to These Authors (Separated By A Comma): </td>
+        <td><input type="text" name="authors" id="authors"></td>
+      </tr>
+      <tr>
+      <tr>
+        <td>Language</td>
+        <td><input type="text" name="language" id="language"></td>
+      </tr>
+      <tr>
+        <td>Time Period (Year - Year Format): </td>
+        <td><input type="text" name="years" id="years"></td>
+      </tr>
+      <tr>
+        <td> Book Length</td>
+        <td> <input type="radio" name="booklength" id="shortbook"> Short (<200 pages)<br>
+            <input type="radio" name="booklength" id="moderatebook"> Moderate (200-500 pages)<br>
+            <input type="radio" name="booklength" id="longbook"> Long (500+ pages)</td>
+      </tr>
 
-  </table>
-  <ul>
-    <li>
-      Number Of Recommendations: <input type="number" name="numRec" min="1">
-    </li>
-    <p>Rate the importance of the following options to you (out of 10):</p>
-    <form id="ratingForm">
+      <tr>
+        <td>&nbsp</td>
+        <td align="center"><input type="button" value="Submit Interests" name="submit" id="submit"
+            onClick="display()" /></td>
+      </tr>
+    </table>
+    <table width="400px" align="center" border=0>
 
+    </table>
+    <ul>
       <li>
-        Character development: <input type="number" name="rating1" min="1" max="10">
+        Number Of Recommendations: <input type="number" name="numRec" min="1">
       </li>
-      <li>
-        Plot: <input type="number" name="rating2" min="1" max="10">
-      </li>
+      <p>Rate the importance of the following options to you (out of 10):</p>
+      <form id="ratingForm">
 
-      <!-- Add more options as needed -->
-  </ul>
-  <input type="submit" value="Submit Ratings">
-  </form>
-</body>
+        <li>
+          Character development: <input type="number" name="rating1" min="1" max="10">
+        </li>
+        <li>
+          Plot: <input type="number" name="rating2" min="1" max="10">
+        </li>
+
+        <!-- Add more options as needed -->
+    </ul>
+    <input type="submit" value="Submit Ratings">
+    </form>
+
+
+    <button onclick=window.location.href='getstarted.html'>BACK </button>
+    <button onclick=window.location.href='index.html'>GO HOME </button>
+  </body>
 
 </html>
