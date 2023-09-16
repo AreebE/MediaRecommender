@@ -8,13 +8,16 @@ const parameters = {
         `The difficulty is as important as ${filler} on a scale of 10.`,
         `The plot is as important as ${filler} on a scale of 10.`,
         `The genres include ${filler}.`,
-        `The work was released ${filler}`
+        `The work was released ${filler}`,
+        `The length is about ${filler} hours long.`,
+
     ],
 
     "Books": [
         `The authors include ${filler}.`,
         `The genres include ${filler}.`,
         `The length is about ${filler} pages long.`,
+        `The plot is as important as ${filler} on a scale of 10.`,
         `The work was released ${filler}`
     ],
 
@@ -34,12 +37,12 @@ const parameters = {
         `The actors include ${filler}.`,
         `The plot is as important as ${filler} on a scale of 10.`,
         `The genres include ${filler}.`,
-        `The length is about ${filler} hours.`,
         `The work was released ${filler}`
     ],
 
     "Music": [
         `The artists include ${filler}.`,
+        `They want songs similar to ${filler}`,
         `The genres include ${filler}.`,
         `The work was released ${filler}.`
     ],
@@ -57,10 +60,14 @@ async function testQuestion(
     let parametersToAdd = parameters[type];
     for (let i = 0; i < selections.length; i++)
     {
-        prompt += "\n * " + performReplacement(parametersToAdd[i], selections[i]);
+        if (selections[i] != null)
+        {
+            prompt += "\n * " + performReplacement(parametersToAdd[i], selections[i]);        
+        }
     }
     console.log(prompt);
-    
+    return " 1. Rihanna - \"Umbrella\" (2007) - Pop 2. Ariana Grande - \"7 Rings\" (2019) - Pop 3. Rihanna - \"Disturbia\" (2008) - Pop/R&B 4. Ariana Grande - \"God is a Woman\" (2018) - Pop 5. Rihanna - \"Stay\" (2012) - Pop/R&B";
+    /*
     const requestOptions = {
         method: "POST",
         headers: {
@@ -85,6 +92,7 @@ async function testQuestion(
       
         return "Oops! Something went wrong while retrieving the response. Please try again.";
     }
+    */
 }
 
 function performReplacement(string, value)

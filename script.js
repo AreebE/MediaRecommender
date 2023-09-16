@@ -1,3 +1,5 @@
+const resultsElement = document.getElementById("responseSection")
+
 testQuestion(
     [
         ["Rihanna", "Ariana Grande"],
@@ -9,10 +11,18 @@ testQuestion(
 ).then(
     (result) =>
         {
-            console.log(result);
+            
+            resultsElement.replaceChildren([]);
+            let choices = result.split(/\d\./g);
+            for (let i = 1; i < choices.length; i++)
+            {
+                let element = document.createElement("p");
+                element.innerHTML = `${i}. ${choices[i]}`;
+                resultsElement.appendChild(element);
+            }
         },
     (failure) =>
         {
-            console.log(failure);
+            resultsElement.innerHTML = result;
         }
 );

@@ -2,3 +2,7 @@ html {
   height: 100%;
   width: 100%;
 }
+
+p:hover {
+    background-color: #f0a8a8;
+}
