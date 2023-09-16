@@ -1,0 +1,14 @@
+/*light teal = #B4D1D1
+  light beige = #E5E7CF
+  beige = #CBBF9E
+  purple magenta = #C297BA
+  grey blue = #92ACC2
+*/
+body {
+  background-color: #C297BA;
+}
+
+h1 {
+  color: black;
+  margin-left: 20px;
+}
