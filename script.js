@@ -2,9 +2,11 @@ const resultsElement = document.getElementById("responseSection")
 
 testQuestion(
     [
-        ["Rihanna", "Ariana Grande"],
-        ["Creepy", "Action", "Fantasy", "Historical"],
-        "from the 1970s to the 2010s"
+        null,
+        [],
+        ["Red", "Blue"],
+        "      ",
+        "the 2010s"
     ],
     'Music',
     5

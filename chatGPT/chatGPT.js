@@ -3,48 +3,56 @@ const apiKey = API_KEY;
 const filler = "{ANS}";
 const parameters = {
     "Video Games": [
-        `Characters are important as ${filler} on a scale of 10.`,
-        `The developers include ${filler}.`,
+        `The genres include ${filler}.`,
+        `The themes include ${filler}.`,
+        `The works are similar to those of developers ${filler}.`,
+        `The length is ${filler}.`,
+        `The work was released around ${filler}.`,
         `The difficulty is as important as ${filler} on a scale of 10.`,
         `The plot is as important as ${filler} on a scale of 10.`,
-        `The genres include ${filler}.`,
-        `The work was released ${filler}`,
-        `The length is about ${filler} hours long.`,
-
     ],
 
     "Books": [
-        `The authors include ${filler}.`,
         `The genres include ${filler}.`,
-        `The length is about ${filler} pages long.`,
+        `The themes include ${filler}.`,
+        `The works are similar to those of authors ${filler}.`,
+        `The language should be ${filler}.`,
+        `The work was released around ${filler}.`,
+        `The length is ${filler}.`,
+        `Character development is as ${filler} on a scale of 10.`,
         `The plot is as important as ${filler} on a scale of 10.`,
-        `The work was released ${filler}`
     ],
 
     "TV Shows": [
-        `Characters are important as ${filler} on a scale of 10.`,
-        `The directors include ${filler}.`,
-        `The actors include ${filler}.`,
-        `The plot is as important as ${filler} on a scale of 10.`,
         `The genres include ${filler}.`,
+        `The themes include ${filler}.`,
+        `It features actors such as ${filler}.`,
+        `It is stylistically similar to directors such as ${filler}.`,
+        `The language should be ${filler}.`,
+        `The work was released around ${filler}.`,
         `The length is ${filler}.`,
-        `The work was released ${filler}`
+        `Character development is as important as ${filler} on a scale of 10.`,
+        `The plot is as important as ${filler} on a scale of 10.`,
     ],
 
     "Movies": [
-        `Characters are important as ${filler} on a scale of 10.`,
-        `The directors include ${filler}.`,
-        `The actors include ${filler}.`,
-        `The plot is as important as ${filler} on a scale of 10.`,
         `The genres include ${filler}.`,
-        `The work was released ${filler}`
+        `The themes include ${filler}.`,
+        `It features actors such as ${filler}.`,
+        `It is stylistically similar to directors such as ${filler}.`,
+        `The language should be ${filler}.`,
+        `The work was released around ${filler}.`,
+        `The length is ${filler}.`,
+        `Character development is as important as ${filler} on a scale of 10.`,
+        `The plot is as important as ${filler} on a scale of 10.`,
     ],
 
     "Music": [
-        `The artists include ${filler}.`,
-        `They want songs similar to ${filler}`,
         `The genres include ${filler}.`,
-        `The work was released ${filler}.`
+        `It is similar to the works of artists ${filler}.`,
+        `It is similar to the songs ${filler}`,
+        `The language should be ${filler}.`,
+        `The work was released around ${filler}.`,
     ],
 }
 
@@ -60,9 +68,10 @@ async function testQuestion(
     let parametersToAdd = parameters[type];
     for (let i = 0; i < selections.length; i++)
     {
-        if (selections[i] != null)
+        let query = performReplacement(parametersToAdd[i], selections[i]);        
+        if (query != null)
         {
-            prompt += "\n * " + performReplacement(parametersToAdd[i], selections[i]);        
+            prompt += "\n * " + query;
         }
     }
     console.log(prompt);
@@ -97,9 +106,17 @@ async function testQuestion(
 
 function performReplacement(string, value)
 {
+    if (value == null)
+    {
+        return null;
+    }
     let valToString = "";
     if (Array.isArray(value))
     {
+        if (value.length == 0)
+        {
+            return null;
+        }
         if (value.length == 1)
         {
             valToString = value[0];
@@ -112,7 +129,11 @@ function performReplacement(string, value)
             valToString += (" and " + value[value.length - 1]);
         }
     }
-    else 
+    else if (!/\w/.test(value))
+    {
+        return null;
+    }
+    else
     {
         valToString = value + "";
     }
