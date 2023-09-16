@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "axios": "^1.5.0",
+    "openai": "^4.7.1"
+  },
+  "name": "mediarecommender",
+  "version": "1.0.0",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AreebE/MediaRecommender.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AreebE/MediaRecommender/issues"
+  },
+  "homepage": "https://github.com/AreebE/MediaRecommender#readme",
+  "description": ""
+}
