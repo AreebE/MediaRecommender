@@ -1,25 +1,26 @@
-var genreslist = [];
+var genresList = [];
 var ratings = [];
+var themesList = [];
+var developersList = [];
+var gameLength;
 function display() {
   //document.getElementById("displayarea").innerHTML = document.getElementById("genres").value;
   var genre = document.getElementById("genres").value;
   //console.log(genre);
-  const genreslist = genre.split(",");
-  console.log(genreslist);
+    genresList = genre.split(",");
   var theme = document.getElementById("themes").value;
-  const themeslist = theme.split(",");
-  console.log(themeslist);
+    themesList = theme.split(",");
   //document.getElementById("displayarea1").innerHTML = document.getElementById("developers").value; 
   var developer = document.getElementById("developers").value;
   //console.log(developer);
-  const developerslist = developer.split(",");
-  console.log(developerslist);
+    developersList = developer.split(",");
+  // console.log(developerslist);
   //const tableuserinput = genre.split(",") + ". " + developer.split(",");
   //console.log(tableuserinput);
   var gamelengthoption = document.getElementsByName("gamelength");
   for (i = 0; i < gamelengthoption.length; i++) {
     if (gamelengthoption[i].checked)
-      var gamelength = gamelengthoption[i].value;
+        gameLength = gamelengthoption[i].value;
   }
 }
 /*<tr style="background-color:#8FBC8F;">
@@ -56,11 +57,10 @@ window.onload = function() {
       }
     }
 
-    // Display or further process the collected ratings here
-    console.log("User Ratings:", ratings);
-    console.log(ratings[1]);
+    gptInput = [genresList, themesList, developersList, gameLength, ratings[0], ratings[1]];
+    loadItems(document.getElementById("numRec").value, "Video Games", gptInput, document)
   });
 }
-var all_inputs = [];
-all_inputs = ratings.concat(genreslist);
-console.log(all_inputs); 
+// var all_inputs = [];
+// all_inputs = ratings.concat(genreslist);
+// console.log(all_inputs); 

@@ -1,32 +1,38 @@
-var genreslist = [];
-var ratings = [];
+var genresList = [];
+var ratingsList = [];
+var themesList = [];
+var actorsList = [];
+var directorsList = [];
+var languagesList = [];
+var yearsList = [];
+var showLength = "";
 function display() {
   //document.getElementById("displayarea").innerHTML = document.getElementById("genres").value;
   var genre = document.getElementById("genres").value;
-  const genreslist = genre.split(",");
-  console.log(genreslist);
+   genresList = genre.split(",");
+  // console.log(genreslist);
   var theme = document.getElementById("themes").value;
-  const themeslist = theme.split(",");
-  console.log(themeslist);
+   themesList = theme.split(",");
+  // console.log(themeslist);
   //document.getElementById("displayarea1").innerHTML = document.getElementById("actors").value; 
   var actor = document.getElementById("actors").value;
   //console.log(actor);
-  const actorslist = actor.split(",");
-  console.log(actorslist);
+   actorsList = actor.split(",");
+  // console.log(actorslist);
 
   var director = document.getElementById("directors").value;
-  const directorslist = director.split(",");
-  console.log(directorslist);
+   directorsList = director.split(",");
+  // console.log(directorslist);
   var language = document.getElementById("languages").value;
-  const languageslist = language.split(",");
-  console.log(languageslist);
+languagesList = language.split(",");
+  // console.log(languageslist);
   var year = document.getElementById("years").value;
-  yearslist = year.split("-");
-  console.log(yearslist);
+  yearsList = year.split("-");
+  // console.log(yearslist);
   var showlengthoption = document.getElementsByName("showlength");
   for (i = 0; i < showlengthoption.length; i++) {
     if (showlengthoption[i].checked)
-      var showlength = showlengthoption[i].value;
+      showLength = showlengthoption[i].value;
   }
 }
 /*<tr style="background-color:#8FBC8F;">
@@ -64,12 +70,11 @@ window.onload = function() {
       }
     }
 
-    // Display or further process the collected ratings here
-    console.log("User Ratings:", ratings);
-    console.log(ratings[1]);
+     gptInput = [genresList, themesList, actorsList, directorsList, languagesList, yearsList, showLength, ratings[0], ratings[1]];
+    loadItems(document.getElementById("numRec").value, "TV Shows", gptInput, document);
   });
 }
-var all_inputs = [];
-all_inputs = ratings.concat(genreslist);
-console.log(all_inputs);
+// var all_inputs = [];
+// all_inputs = ratings.concat(genreslist);
+// console.log(all_inputs);
 

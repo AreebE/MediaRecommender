@@ -5,7 +5,7 @@ var themeslist = [];
 var authorslist = [];
 var languageslist = [];
 var yearslist = [];
-var booklengthoptions = [];
+var booklength;
 var reclist = [];
 var ratings = [];
 function display() {
@@ -25,21 +25,21 @@ function display() {
   authorslist = author.split(",");
   //console.log(authorslist);
   var language = document.getElementById("languages").value;
-  var languageslist = language.split(",");
+  languageslist = language.split(",");
   //console.log(languageslist);
   var year = document.getElementById("years").value;
-  var yearslist = year.split("-");
+  yearslist = year.split("-");
   //console.log(yearslist);
   booklengthoptions = document.getElementsByName("booklength");
   for (var i=0; i<booklengthoptions.length; i++)
     {
       if(booklengthoptions[i].checked){
-         var booklength=booklengthoptions[i].value;
+         booklength=booklengthoptions[i].value;
       }
     }
   
   var rec = document.getElementById("recommendations").value;
-  var reclist = rec.split(",");
+    reclist = rec.split(",");
   
   //console.log(reclist);
   genresforcomb = genreslist;
@@ -71,15 +71,13 @@ window.onload = function() {
         }
       }
     }
-
-    // Display or further process the collected ratings here
-    console.log("User Ratings:", ratings);
-    console.log(ratings[1]);
+      console.log("f");
+    gptInput = [genreslist, themeslist, authorslist, languageslist, yearslist, booklengthoptions, ratings[0], ratings[1]];
+    loadItems(document.getElementById("recommendations").value, "Books", gptInput, document)
   });
   
 }
-gptInput = ["Books", genreslist, themeslist, authorslist, languageslist, yearslist, booklengthoptions, ratings];
-  console.log(gptInput);
+
 
 //var all_inputs = [];
 //all_inputs = ratings.concat(genreslist);

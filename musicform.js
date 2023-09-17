@@ -2,24 +2,27 @@ var genreslist = [];
 function display() {
   //document.getElementById("displayarea").innerHTML = document.getElementById("genres").value;
   var genre = document.getElementById("genres").value;
-  const genreslist = genre.split(",");
-  console.log(genreslist);
+  const genresList = genre.split(",");
+  // console.log(genreslist);
   //document.getElementById("displayarea1").innerHTML = document.getElementById("artists").value; 
   var artist = document.getElementById("artists").value;
   //console.log(artist);
-  const artistslist = artist.split(",");
-  console.log(artistslist);
+  const artistsList = artist.split(",");
+  // console.log(atistslist);
 
   var similarsong = document.getElementById("similarsongs").value;
   //console.log(artist);
-  const similarsonglist = similarsong.split(",");
-  console.log(similarsonglist);
+  const similarSongList = similarsong.split(",");
+  // console.log(similarsonglist);
   var language = document.getElementById("languages").value;
-  const languageslist = language.split(",");
-  console.log(languageslist);
+  const languagesList = language.split(",");
+  // console.log(languageslist);
   var year = document.getElementById("years").value;
-  yearslist = year.split("-");
-  console.log(yearslist);
+  var yearsList = year.split("-");
+  // console.log(yearslist);
+
+    gptInput = [genresList, artistsList, similarSongList, languagesList, yearsList];
+    loadItems(document.getElementById("numRec").value, "Music", gptInput, document);
   //const tableuserinput = genre.split(",") + ". " + artist.split(",") + ". " + similarsong.split(",");
   //console.log(tableuserinput);
 }
