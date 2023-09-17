@@ -23,7 +23,7 @@ function loadItems(
                     let title = document.createElement("p");
                     title.innerHTML = `${i}. ${choices[i]}`;
                     let summary = document.createElement("p");
-                    sleep(500 * i).then(() => getSummary(choices[i]).then(
+                    sleep(2000 * i).then(() => getSummary(choices[i]).then(
                         (result) => {
                             summary.innerHTML = result;
                         },
