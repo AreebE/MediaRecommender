@@ -55,28 +55,31 @@ const parameters = {
         `The work was released around ${filler}.`,
     ],
 }
+const API_URL = "https://api.openai.com/v1/completions";
 
-async function testQuestion(
-    selections,
+
+async function getRecommendations(
+    numOfChoices,
     type,
-    numOfChoices
+    selections,
 ) {
-    const API_URL = "https://api.openai.com/v1/completions";
     let prompt = "You are a media recommender, where you recommend various forms of media. Here is what I am requesting: \n"
             + ` * It is classified as ${type}.\n`
             + ` * Give at most ${numOfChoices} choices.`;
     let parametersToAdd = parameters[type];
     for (let i = 0; i < selections.length; i++)
     {
-        let query = performReplacement(parametersToAdd[i], selections[i]);        
+        // console.log(selections[i]);
+        let query = performReplacement(parametersToAdd[i], selections[i]); 
+        // console.log("e");
         if (query != null)
         {
             prompt += "\n * " + query;
         }
     }
-    console.log(prompt);
-    return " 1. Rihanna - \"Umbrella\" (2007) - Pop 2. Ariana Grande - \"7 Rings\" (2019) - Pop 3. Rihanna - \"Disturbia\" (2008) - Pop/R&B 4. Ariana Grande - \"God is a Woman\" (2018) - Pop 5. Rihanna - \"Stay\" (2012) - Pop/R&B";
-    /*
+    // console.log(prompt);
+    // return " 1. Rihanna - \"Umbrella\" (2007) - Pop 2. Ariana Grande - \"7 Rings\" (2019) - Pop 3. Rihanna - \"Disturbia\" (2008) - Pop/R&B 4. Ariana Grande - \"God is a Woman\" (2018) - Pop 5. Rihanna - \"Stay\" (2012) - Pop/R&B";
+    
     const requestOptions = {
         method: "POST",
         headers: {
@@ -91,8 +94,8 @@ async function testQuestion(
             n: 1,
             stop: null
         })
-    }
-    console.log(requestOptions);
+    };
+    // console.log(requestOptions);
     // Send POST request to API, get response and set the reponse as paragraph element text
     try {
         const response = await (await fetch(API_URL, requestOptions)).json();
@@ -101,7 +104,7 @@ async function testQuestion(
       
         return "Oops! Something went wrong while retrieving the response. Please try again.";
     }
-    */
+    
 }
 
 function performReplacement(string, value)
@@ -111,8 +114,10 @@ function performReplacement(string, value)
         return null;
     }
     let valToString = "";
+
     if (Array.isArray(value))
     {
+
         if (value.length == 0)
         {
             return null;
@@ -138,4 +143,31 @@ function performReplacement(string, value)
         valToString = value + "";
     }
     return string.replace(filler, valToString);
+}
+
+async function getSummary(title)
+{
+    const requestOptions = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer " + apiKey
+        },
+        body: JSON.stringify({
+            model: "text-davinci-003",
+            prompt: "Give me a summary for " + title + " in less than 100 words.",
+            max_tokens: 2048,
+            temperature: 0.2,
+            n: 1,
+            stop: null
+        })
+    };
+
+    try {
+        const response = await (await fetch(API_URL, requestOptions)).json();
+        return response.choices[0].text.trim();
+    } catch (error) { // Add error class to the paragraph element and set error text
+      
+        return "Oops! Something went wrong while retrieving the response. Please try again.";
+    }
 }
