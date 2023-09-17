@@ -54,6 +54,13 @@ const parameters = {
         `The language should be ${filler}.`,
         `The work was released around ${filler}.`,
     ],
+
+    "Anything": [
+        `The genres include ${filler}.`,
+        `The themes include ${filler}.`,
+        `The language should be ${filler}.`,
+        `The work was released around ${filler}.`,
+    ]
 }
 const API_URL = "https://api.openai.com/v1/completions";
 
