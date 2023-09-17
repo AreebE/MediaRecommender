@@ -25,12 +25,15 @@
           <input type="radio" name="gamelength" id="moderategame"> Moderate (20-100 hours)<br>
           <input type="radio" name="gamelength" id="longgame"> Long (100+ hours)</td>
     </tr>
+    <tr>
+      <td>Number Of Recommendations </td>
+    <td><input type="number" name="numRec" id=numRec min="1"></td>
 
     </tr>
 
     <tr>
       <td>&nbsp</td>
-      <td align="center"><input type="button" value="Submit Interests" name="submit" id="submit" onClick="display()" />
+      <td align="center"><input type="button" value="Submit Interests" name="submit" id="submit" onClick="callBoth()" />
       </td>
     </tr>
   </table>
@@ -38,10 +41,9 @@
 
 
   </table>
+  <div id="hiddenText" style="visibility :hidden;">
   <ul>
-    <li>
-      Number Of Recommendations: <input type="number" name="numRec" min="1">
-    </li>
+
     <p>Rate the importance of the following options to you (out of 10):</p>
     <form id="ratingForm">
       <li>
@@ -55,6 +57,16 @@
   </ul>
   <input type="submit" value="Submit Ratings">
   </form>
+      </div>
+  <script>
+    function showText(){
+      document.getElementById("hiddenText").style.visibility="visible";
+    }
+    function callBoth(){
+      display();
+      showText();
+    }
+  </script>
 
 
   <button onclick=window.location.href='getstarted.html'>BACK </button>

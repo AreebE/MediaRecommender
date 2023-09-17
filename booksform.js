@@ -7,16 +7,19 @@ function display() {
   genreslist = genre.split(",");
   console.log(genreslist);
   var theme = document.getElementById("themes").value;
-  themeslist = theme.split(",");
+  var themeslist = theme.split(",");
   console.log(themeslist);
   //document.getElementById("displayarea1").innerHTML = document.getElementById("authors").value; 
   var author = document.getElementById("authors").value;
   //console.log(author);
-  const authorslist = author.split(",");
+  var authorslist = author.split(",");
   console.log(authorslist);
   var year = document.getElementById("years").value;
-  yearslist = year.split("-");
+  var yearslist = year.split("-");
   console.log(yearslist);
+  var rec = document.getElementById("recommendations").value;
+  var reclist = rec.split(",");
+  console.log(reclist);
   genresforcomb = genreslist;
   return genresforcomb;
 }

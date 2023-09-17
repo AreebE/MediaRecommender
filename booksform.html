@@ -39,20 +39,23 @@
             <input type="radio" name="booklength" id="moderatebook"> Moderate (200-500 pages)<br>
             <input type="radio" name="booklength" id="longbook"> Long (500+ pages)</td>
       </tr>
+      <tr>
+        <td>Number of Recommendations: </td>
+        <td><input type="text" name="recommendations" id="recommendations"></td>
+      </tr>
 
       <tr>
         <td>&nbsp</td>
         <td align="center"><input type="button" value="Submit Interests" name="submit" id="submit"
-            onClick="display()" /></td>
+            onClick="callBoth()" /></td>
       </tr>
     </table>
     <table width="400px" align="center" border=0>
 
     </table>
+    <div id="hiddenText" style="visibility :hidden;">
     <ul>
-      <li>
-        Number Of Recommendations: <input type="number" name="numRec" min="1">
-      </li>
+      
       <p>Rate the importance of the following options to you (out of 10):</p>
       <form id="ratingForm">
 
@@ -63,12 +66,23 @@
           Plot: <input type="number" name="rating2" min="1" max="10">
         </li>
 
+
+
         <!-- Add more options as needed -->
     </ul>
     <input type="submit" value="Submit Ratings">
     </form>
-
-
+        </div>
+  <script>
+    function showText(){
+      document.getElementById("hiddenText").style.visibility="visible";
+    }
+    function callBoth(){
+      display();
+      showText();
+    }
+  </script>
+    
     <button onclick=window.location.href='getstarted.html'>BACK </button>
     <button onclick=window.location.href='index.html'>GO HOME </button>
   </body>

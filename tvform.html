@@ -37,24 +37,27 @@
         <input type="radio" name="showlength" id="moderateshow"> Moderate (~10 episodes) <br><input type="radio"
           name="showlength" id="longshow"> Long (10+ episodes) </td>
     </tr>
-
+   <tr>
+          
+      <td>Number Of Recommendations </td>
+    <td><input type="number" name="numRec" id=numRec min="1"></td>
+    
+    </tr>
     <tr>
       <td>&nbsp</td>
-      <td align="center"><input type="button" value="Submit Interests" name="submit" id="submit" onClick="display()" onclick="showText()" />
+      <td align="center"><input type="button" value="Submit Interests" name="submit" id="submit" onClick="callBoth()" />
       </td>
     </tr>
+ 
   </table>
   <table width="400px" align="center" border=0>
 
   </table>
-  <div id="hiddenText" style="display :none;">
-  <ul>
-    <li>
-      Number Of Recommendations: <input type="number" name="numRec" min="1">
-    </li>
+  <div id="hiddenText" style="visibility :hidden;">
+ 
     <p>Rate the importance of the following options to you (out of 10):</p>
     <form id="ratingForm">
-
+<ul>
       <li>
         Characters: <input type="number" name="rating1" min="1" max="10">
       </li>
@@ -69,7 +72,11 @@
   </div>
   <script>
     function showText(){
-      document.getElementById("hiddenText").style.display="block";
+      document.getElementById("hiddenText").style.visibility="visible";
+    }
+    function callBoth(){
+      display();
+      showText();
     }
   </script>
 
