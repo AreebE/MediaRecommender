@@ -37,52 +37,55 @@
         <input type="radio" name="showlength" id="moderateshow"> Moderate (~10 episodes) <br><input type="radio"
           name="showlength" id="longshow"> Long (10+ episodes) </td>
     </tr>
-   <tr>
-          
+    <tr>
+
       <td>Number Of Recommendations </td>
-    <td><input type="number" name="numRec" id=numRec min="1"></td>
-    
+      <td><input type="number" name="numRec" id=numRec min="1"></td>
+
     </tr>
     <tr>
       <td>&nbsp</td>
       <td align="center"><input type="button" value="Submit Interests" name="submit" id="submit" onClick="callBoth()" />
       </td>
     </tr>
- 
+
   </table>
   <table width="400px" align="center" border=0>
 
   </table>
   <div id="hiddenText" style="visibility :hidden;">
- 
+
     <p>Rate the importance of the following options to you (out of 10):</p>
     <form id="ratingForm">
-<ul>
-      <li>
-        Characters: <input type="number" name="rating1" min="1" max="10">
-      </li>
-      <li>
-        Plot: <input type="number" name="rating2" min="1" max="10">
-      </li>
+      <ul>
+        <li>
+          Characters: <input type="number" name="rating1" min="1" max="10">
+        </li>
+        <li>
+          Plot: <input type="number" name="rating2" min="1" max="10">
+        </li>
 
-      <!-- Add more options as needed -->
-  </ul>
-  <input type="submit" value="Submit Ratings">
-  </form>
+        <!-- Add more options as needed -->
+      </ul>
+      <input type="submit" value="Submit Ratings">
+    </form>
   </div>
   <script>
-    function showText(){
-      document.getElementById("hiddenText").style.visibility="visible";
+    function showText() {
+      document.getElementById("hiddenText").style.visibility = "visible";
     }
-    function callBoth(){
+    function callBoth() {
       display();
       showText();
     }
   </script>
 
-
-  <button onclick=window.location.href='getstarted.html'>BACK </button>
-  <button onclick=window.location.href='index.html'>GO HOME </button>
+  <br>
+  <div style="text-align:center;">
+    <button onclick=window.location.href='getstarted.html'>BACK </button>
+    <br><br>
+    <button onclick=window.location.href='index.html'>GO HOME </button>
+  </div>
 
 </body>
 

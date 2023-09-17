@@ -26,7 +26,7 @@ function display() {
   var showlengthoption = document.getElementsByName("showlength");
   for (i = 0; i < showlengthoption.length; i++) {
     if (showlengthoption[i].checked)
-      console.log(showlengthoption[i].value)
+      var showlength = showlengthoption[i].value;
   }
 }
 /*<tr style="background-color:#8FBC8F;">

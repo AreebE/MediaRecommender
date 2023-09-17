@@ -19,7 +19,7 @@ function display() {
   var gamelengthoption = document.getElementsByName("gamelength");
   for (i = 0; i < gamelengthoption.length; i++) {
     if (gamelengthoption[i].checked)
-      console.log(gamelengthoption[i].value)
+      var gamelength = gamelengthoption[i].value;
   }
 }
 /*<tr style="background-color:#8FBC8F;">
