@@ -30,7 +30,7 @@ function display() {
   var year = document.getElementById("years").value;
   var yearslist = year.split("-");
   //console.log(yearslist);
-  booklengthoptions = document.getElementsByName('booklength');
+  booklengthoptions = document.getElementsByName("booklength");
   for (var i=0; i<booklengthoptions.length; i++)
     {
       if(booklengthoptions[i].checked){
@@ -78,7 +78,7 @@ window.onload = function() {
   });
   
 }
-gptInput = ["Books", genreslist, themeslist, authorslist, languageslist, yearslist, booklength, ratings];
+gptInput = ["Books", genreslist, themeslist, authorslist, languageslist, yearslist, booklengthoptions, ratings];
   console.log(gptInput);
 
 //var all_inputs = [];
