@@ -1,19 +1,4 @@
 
-loadItems(
-    5,
-    "Books",
-    [
-        ["Action", "Horror", "Fantasy"],
-        ["Justice", "Kindness"],
-        ["Rowling"],
-        "English",
-        1995,
-        "Moderate (200-500 pages)",
-        7,
-        8
-    ],
-    document
-)
 function loadItems(
     numOfRecommendations,
     type,
