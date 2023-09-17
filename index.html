@@ -26,7 +26,7 @@
             text-align: center
         }
  
-        .box{ margin: 65px; height:300px; width: 500px; background-color: white; overflow-wrap: break-word; text-align: center;}
+        .box{ margin: 65px; height:265px; width: 500px; background-color: white; overflow-wrap: break-word; text-align: center;}
         .container {
           display: flex; align-items: center; justify-content: center;
         }
@@ -36,13 +36,27 @@
             margin: 5px;
             padding: 10px;
         }
+
+    .header {
+            display: flex; /* Use flexbox to align items horizontally */
+            align-items: center; /* Vertically center items within the container */
+        }
+
+    img {
+            margin-left: 15px;
+    /* Adjust the margin as needed */
+        }
   </style>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>replit</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
+  <div class="header">
+  <img src="Retromender Logo.png" height=38 width=40; align-items: center>
+  
 <h1>Retro Recommend</h1>
+    </div>
   <div class="container">
   <div class="box">
   <p>Don't know what to watch, read, or listen to? Retro Recommend can help you out! Using the ChatGPT API, Retro Recommend is able to provide you various personalized media recommendations depending on your personal interests! Just click the Get Started! button and find out what you should watch, read, or listen to!</p>
@@ -50,7 +64,7 @@
   </div>
 
 <body>
-  <button onclick="window.location.href='getstarted.html';" class="nes-btn">Get Started!</button>
+  <button onclick="window.location.href='getstarted.html';" class="nes-btn" style="background-color: #84D2C5;">Get Started!</button>
 
   <!--
   This script places a badge on your repl's full-browser view back to your repl's cover
