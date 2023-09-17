@@ -1,54 +1,84 @@
 <html>
+
 <head>
-<script src="gameform.js"> 
-</script>
+  <script src="gameform.js">
+  </script>
 </head>
 
 <body>
-<table  border="1" align="center">
-<tr>
-<td>Genres (Separated By A Comma)</td>
-<td><input type="text" name="genres" id="genres"></td>
-</tr>
-<tr>
-<td>Similar to These Developers (Separated By A Comma): </td>
-<td><input type="text" name="developers" id="developers"></td>
-<tr>
-<td> Game Length</td>
-<td> <input type="radio" name="gamelength" id="shortgame"> Short (<20 hours)<br>
-<input type="radio" name="gamelength" id="moderategame"> Moderate (20-100 hours)<br>
-<input type="radio" name="gamelength" id="longgame"> Long (100+ hours)</td>
-</tr>
+  <h1 style="text-align : center"> VIDEO GAMES</h1>
+  <table border="1" align="center">
+    <tr>
+      <td>Genres (Separated By A Comma)</td>
+      <td><input type="text" name="genres" id="genres"></td>
+    </tr>
+    <tr>
+      <td>Themes (Separated By A Comma)</td>
+      <td><input type="text" name="themes" id="themes"></td>
+    </tr>
+    <tr>
+      <td>Similar to These Developers (Separated By A Comma): </td>
+      <td><input type="text" name="developers" id="developers"></td>
+    <tr>
+      <td> Game Length</td>
+      <td> <input type="radio" name="gamelength" id="shortgame"> Short (<20 hours)<br>
+          <input type="radio" name="gamelength" id="moderategame"> Moderate (20-100 hours)<br>
+          <input type="radio" name="gamelength" id="longgame"> Long (100+ hours)</td>
+    </tr>
+    <tr>
+      <td>Number Of Recommendations </td>
+      <td><input type="number" name="numRec" id=numRec min="1"></td>
 
-</tr>
+    </tr>
 
-<tr>
-<td>&nbsp</td>
-<td align="center"><input type="button" value="Submit" name="submit" id="submit" onClick="display()"/></td>
-</tr>
-</table>
-<table width="400px" align="center" border=0> 
+    <tr>
+      <td>&nbsp</td>
+      <td align="center"><input type="button" value="Submit Interests" name="submit" id="submit" onClick="callBoth()" />
+      </td>
+    </tr>
+  </table>
+  <table width="400px" align="center" border=0>
 
 
-</table>
-  <ul>
-    <li>
-                Number Of Recommendations: <input type="number" name="numRec" min="1">
-            </li>
-  <p>Rate the importance of the following options to you (out of 10):</p>
-    <form id="ratingForm">
-            <li>
-                Difficulty: <input type="number" name="rating1" min="1" max="10">
-            </li>
-            <li>
-                Plot: <input type="number" name="rating2" min="1" max="10">
-            </li>
-          
-            <!-- Add more options as needed -->
-        </ul>
-        <input type="submit" value="Submit Ratings">
+  </table>
+  <div id="hiddenText" style="visibility :hidden;">
+    <ul>
+
+      <p>Rate the importance of the following options to you (out of 10):</p>
+      <form id="ratingForm">
+        <li>
+          Difficulty: <input type="number" name="rating1" min="1" max="10">
+        </li>
+        <li>
+          Plot: <input type="number" name="rating2" min="1" max="10">
+        </li>
+
+        <!-- Add more options as needed -->
+    </ul>
+    <input type="submit" value="Submit Ratings">
     </form>
-    <div id="responseSection"></div>
+  </div>
+  
+  <script>
+    function showText() {
+      document.getElementById("hiddenText").style.visibility = "visible";
+    }
+    function callBoth() {
+      display();
+      showText();
+    }
+  </script>
+
+
+  <br>
+        <div id="responseSection"></div>
+
+  <div style="text-align:center;">
+    <button onclick=window.location.href='getstarted.html'>BACK </button>
+    <br><br>
+    <button onclick=window.location.href='index.html'>GO HOME </button>
+  </div>
 
 </body>
+
 </html>
