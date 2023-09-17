@@ -1,5 +1,5 @@
-var myAudio = new Audio('bgm.mp3');
-myAudio.play();
+// var myAudio = new Audio('bgm.mp3');
+// myAudio.play();
 function loadItems(
     numOfRecommendations,
     type,
