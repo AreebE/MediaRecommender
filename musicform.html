@@ -1,0 +1,66 @@
+<html>
+
+<head>
+  <script src="jsFiles/musicform.js"></script>
+    <link rel="stylesheet" href="style3.css">
+<title>Retro Recommend</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
+</head>
+<body style="background-color:#B05A7A;">
+
+<body>
+  <br>
+  <br>
+  <h1 style="text-align : center"> MUSIC</h1>
+  <table border="1" align="center">
+    <tr>
+      <td>Genres (Separated By A Comma)</td>
+      <td><input type="text" name="genres" id="genres"></td>
+    </tr>
+    <tr>
+      <td>Similar to These Artists (Separated By A Comma): </td>
+      <td><input type="text" name="artists" id="artists"></td>
+    </tr>
+    <tr>
+      <td>Similar to These Songs (Separated By A Comma): </td>
+      <td><input type="text" name="similarsongs" id="similarsongs"></td>
+    </tr>
+    <tr>
+      <td>Language(s) (Separated By A Comma)</td>
+      <td><input type="text" name="languages" id="languages"></td>
+    </tr>
+    <tr>
+      <td>Time Period (Year - Year Format): </td>
+      <td><input type="text" name="years" id="years"></td>
+    </tr>
+    <tr>
+      <td>Number Of Recommendations </td>
+      <td><input type="number" name="numRec" id=numRec min="1"></td>
+    </tr>
+
+    <tr>
+      <td>&nbsp</td>
+      <td align="center"><input type="button" value="Submit Interests"  style="background-color: #E4C988;"name="submit" id="submit" class="nes-btn" onClick="display()" />
+      </td>
+    </tr>
+  </table>
+  <table width="400px" align="center" border=0>
+
+  </table>
+  <div id="responseSection"></div>
+    <script src="chatGPT/KEYS.js"> </script>
+        <script src="chatGPT/chatGPT.js"></script>
+    <script src="jsFiles/itemLoader.js"></script>
+
+  <br>
+  <div style="text-align:center;">
+    <button class="nes-btn" onclick=window.location.href='getstarted.html'>BACK </button>
+    <br><br>
+    <button onclick=window.location.href='index.html' class="nes-btn" >GO HOME </button>
+  </div>
+
+</body>
+
+</html>

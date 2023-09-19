@@ -1,8 +1,14 @@
-html {
-  height: 100%;
-  width: 100%;
+/*teal = #84D2C5
+  yellow = #E4C988
+  red = #C27664
+  purple magenta = #B05A7A
+*/
+body {
+  background-color: #E4C988;
 }
 
-p:hover {
-    background-color: #f0a8a8;
+h1 {
+  color: #B05A7A;
+  margin-left: 20px;
 }
+

@@ -1,0 +1,99 @@
+<html>
+
+<head>
+  <script src="jsFiles/movieform.js"></script>
+  <title>Retro Recommend</title>
+  <link rel="stylesheet" href="style2.css">
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
+</head>
+<body style="background-color:#C27664;">
+
+<body>
+  <br>
+  <br>
+  <h1 style="text-align : center"> MOVIES</h1>
+  <table border="1" align="center">
+    <tr>
+      <td>Genres (Separated By A Comma)</td>
+      <td><input type="text" name="genres" id="genres"></td>
+    </tr>
+    <tr>
+      <td>Themes (Separated By A Comma)</td>
+      <td><input type="text" name="themes" id="themes"></td>
+    </tr>
+    <tr>
+      <td>Featuring Actors such as (Separated By A Comma): </td>
+      <td><input type="text" name="actors" id="actors"></td>
+    </tr>
+    <tr>
+      <td>Stylistically Similar to These Directors (Separated By A Comma):</td>
+      <td><input type="text" name="directors" id="directors"></td>
+    </tr>
+    <tr>
+      <td>Language(s) (Separated By A Comma)</td>
+      <td><input type="text" name="languages" id="languages"></td>
+    </tr>
+    <tr>
+      <td>Time Period (Year - Year Format): </td>
+      <td><input type="text" name="years" id="years"></td>
+    </tr>
+    <tr>
+      <td>Number Of Recommendations </td>
+      <td><input type="number" name="numRec" id=numRec min="1"></td>
+    </tr>
+
+    <tr>
+      <td>&nbsp</td>
+      <td align="center"><input type="button" 
+ class="nes-btn" value="Submit Interests"  style="background-color: #84D2C5;"name="submit" id="submit" onClick="callBoth()" />
+      </td>
+    </tr>
+  </table>
+  <table width="400px" align="center" border=0>
+
+
+  </table>
+  <div id="hiddenText" style="visibility :hidden;">
+    <ul>
+
+      <p>Rate the importance of the following options to you (out of 10):</p>
+      <form id="ratingForm">
+        <li>
+          Characters: <input type="number" name="rating1" min="1" max="10">
+        </li>
+        <li>
+          Plot: <input type="number" name="rating2" min="1" max="10">
+        </li>
+
+     
+    </ul>
+    <input type="submit" value="Submit Ratings" style="background-color: #84D2C5;">
+    </form>
+       <div id="responseSection"></div>
+    <script src="chatGPT/KEYS.js"> </script>
+        <script src="chatGPT/chatGPT.js"></script>
+    <script src="jsFiles/itemLoader.js"></script>
+
+  </div>
+  <script>
+    function showText() {
+      document.getElementById("hiddenText").style.visibility = "visible";
+    }
+    function callBoth() {
+      display();
+      showText();
+    }
+  </script>
+
+
+  <br>
+  <div style="text-align:center;">
+    <button class="nes-btn" onclick=window.location.href='getstarted.html'>BACK </button>
+    <br><br>
+    <button onclick=window.location.href='index.html' class="nes-btn">GO HOME </button>
+  </div>
+
+</body>
+
+</html>

@@ -1,31 +1,83 @@
 <!DOCTYPE html>
 <html>
+<link rel="stylesheet" href="style.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
+
+ 
+
 
 <head>
+  <style>
+    title {
+      text-align: center;
+    }
+    h1{
+      text-align: center;
+    }
+
+    body {
+      text-align: center;
+    }
+    p {
+      text-align: center;
+    }
+    div {
+      text-align: center;
+    }
+        body {
+            background-color: white;
+            color: black;
+            text-align: center
+        }
+ 
+        .box{ margin: 65px; height:265px; width: 500px; background-color: white; overflow-wrap: break-word; text-align: center;}
+        .container {
+          display: flex; align-items: center; justify-content: center;
+        }
+ 
+        .p {
+            color: white;
+            margin: 5px;
+            padding: 10px;
+        }
+
+    
+
+    
+  </style>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>replit</title>
+  <title>Retro Recommend</title>
+  <link rel="icon" type="image/x-icon" href="Retromender Logo.png">
   <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
+  <div class="header"> 
+  
+   
+    
+  <br>
+  <br>
+<h1>Retro Recommend</h1>
+    </div>
+  <div class="container">
+  <div class="box">
+  <p>Don't know what to watch, read, or listen to? Retro Recommend can help you out! Using the ChatGPT API, Retro Recommend is able to provide you various personalized media recommendations depending on your personal interests! Just click the Get Started! button and find out what you should watch, read, or listen to!</p>
+  </div>
+  </div>
 
 <body>
-  Hello world
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="chatGPT/KEYS.js"></script>
+  <button onclick="window.location.href='getstarted.html';" class="nes-btn" style="background-color: #84D2C5;">Get Started!</button>
 
-    <script src="chatGPT/chatGPT.js"></script>
-
-
-    <div id="responseSection">
-        
-    </div>
   <!--
   This script places a badge on your repl's full-browser view back to your repl's cover
   page. Try various colors for the theme: dark, light, red, orange, yellow, lime, green,
   teal, blue, blurple, magenta, pink!
   -->
-      <script src="script.js"></script>
-
+  <script src="https://replit.com/public/js/replit-badge-v2.js" theme="dark" position="bottom-right"></script>
+        <script src="chatGPT/KEYS.js"> </script>
+        <script src="chatGPT/chatGPT.js"></script>
 </body>
 
 </html>
